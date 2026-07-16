@@ -123,16 +123,17 @@
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.6)} }
     .hero-h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(64px, 6.8vw, 104px);
-      line-height: .93; letter-spacing: -1px;
+      font-size: clamp(58px, 6vw, 96px);
+      line-height: 1; letter-spacing: -1px;
       margin-bottom: 36px;
       opacity: 0; animation: up .9s ease .5s forwards;
     }
     .hero-h1 .italic {
       font-family: 'Playfair Display', serif;
       font-style: italic; font-weight: 400;
-      color: var(--gold); font-size: .78em; display: block;
-      line-height: 1;
+      color: var(--gold); font-size: .8em;
+      display: inline;
+      line-height: inherit;
     }
     .hero-body {
       font-size: 14px; font-weight: 300; line-height: 1.85;
@@ -431,27 +432,116 @@
     .ft-legal a { font-size:11px; color:rgba(245,245,240,.2); text-decoration:none; letter-spacing:.5px; transition:color .3s; }
     .ft-legal a:hover { color:var(--muted); }
 
-    /* ── RESPONSIVE ── */
+    /* ── RESPONSIVE TABLET ── */
     @media(max-width:960px){
-      nav{padding:20px 24px;} nav.sticky{padding:14px 24px;}
-      .nav-links{display:none;}
-      #hero{grid-template-columns:1fr; padding:0 24px; text-align:center;}
-      .hero-right{display:none;}
-      .hero-stats{justify-content:center;}
-      section{padding:80px 24px;}
-      #featured{grid-template-columns:1fr;}
-      .ft-img{height:360px;}
-      .ft-content{padding:56px 32px;}
-      .prod-grid{grid-template-columns:1fr 1fr;}
-      .craft-top{grid-template-columns:1fr;}
-      .craft-content{padding:56px 32px;}
-      .craft-pillars{grid-template-columns:1fr;}
-      .cat-grid{grid-template-columns:1fr 1fr; grid-template-rows:auto;}
-      .cat-card:first-child{grid-row:span 1;}
-      .test-grid{grid-template-columns:1fr;}
-      .ft-grid{grid-template-columns:1fr 1fr; gap:40px;}
-      .ft-bottom{flex-direction:column; gap:16px; text-align:center;}
-      .strip{padding:24px;}
+      nav { padding: 18px 28px; }
+      nav.sticky { padding: 14px 28px; }
+      .nav-links { display: none; }
+      .nav-btn { font-size: 10px; padding: 10px 18px; }
+
+      #hero {
+        grid-template-columns: 1fr;
+        min-height: 100svh;
+        padding: 120px 28px 60px;
+        text-align: left;
+      }
+      .hero-right { display: none; }
+      .hero-stats { justify-content: flex-start; gap: 28px; }
+      .hero-glow, .hero-glow2 { display: none; }
+      .scroll-cue { display: none; }
+
+      section { padding: 80px 28px; }
+
+      #featured { grid-template-columns: 1fr; }
+      .ft-img { height: 340px; }
+      .ft-content { padding: 52px 28px; }
+      .ft-h2 { font-size: 52px; }
+
+      .prod-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+      .prod-img { height: 280px; }
+
+      .craft-top { grid-template-columns: 1fr; }
+      .craft-img { height: 320px; }
+      .craft-content { padding: 52px 28px; }
+      .craft-pillars { grid-template-columns: 1fr; }
+      .craft-pillar { padding: 36px 28px; border-right: none; border-bottom: 1px solid rgba(245,245,240,.04); }
+      .craft-pillar:last-child { border-bottom: none; }
+
+      #manifesto { padding: 100px 28px; }
+      .mf-h2 { font-size: clamp(48px, 10vw, 80px); }
+
+      .cat-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px 220px; }
+      .cat-card:first-child { grid-row: span 2; }
+
+      .test-grid { grid-template-columns: 1fr; gap: 2px; }
+
+      .strip { padding: 24px 28px; justify-content: flex-start; gap: 20px; }
+      .strip-item { font-size: 10px; }
+
+      #newsletter { padding: 90px 28px; }
+      .nl-form { max-width: 100%; }
+
+      footer { padding: 64px 28px 36px; }
+      .ft-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .ft-bottom { flex-direction: column; gap: 14px; text-align: center; }
+      .ft-legal { justify-content: center; }
+    }
+
+    /* ── RESPONSIVE MOBILE ── */
+    @media(max-width:600px){
+      nav { padding: 16px 20px; }
+      nav.sticky { padding: 12px 20px; }
+      .logo { font-size: 22px; letter-spacing: 7px; }
+      .nav-btn { display: none; }
+
+      #hero { padding: 100px 20px 52px; }
+      .hero-h1 { font-size: clamp(52px, 14vw, 80px); }
+      .hero-eyebrow { font-size: 10px; letter-spacing: 3px; }
+      .hero-body { font-size: 13px; max-width: 100%; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .btn-gold { width: 100%; text-align: center; }
+      .hero-stats { gap: 20px; flex-wrap: wrap; margin-top: 44px; padding-top: 32px; }
+      .stat-n { font-size: 30px; }
+
+      .mq-item { font-size: 13px; letter-spacing: 5px; padding: 0 24px; gap: 24px; }
+
+      section { padding: 64px 20px; }
+
+      .ft-img { height: 280px; }
+      .ft-content { padding: 44px 20px; }
+      .ft-h2 { font-size: 44px; }
+      .ft-colors { margin-bottom: 28px; }
+
+      .prod-grid { grid-template-columns: 1fr; }
+      .prod-img { height: 320px; }
+
+      .craft-img { height: 260px; }
+      .craft-content { padding: 44px 20px; }
+      .craft-h2 { font-size: clamp(42px, 11vw, 68px); }
+      .craft-pillar { padding: 32px 20px; }
+      .pillar-title { font-size: 18px; }
+
+      #manifesto { padding: 80px 20px; }
+      #manifesto::before { font-size: 80px; }
+
+      .cat-grid { grid-template-columns: 1fr; grid-template-rows: repeat(5, 200px); }
+      .cat-card:first-child { grid-row: span 1; }
+
+      .test-card { padding: 36px 28px; }
+      .test-quote { font-size: 13px; }
+
+      .strip { flex-direction: column; align-items: flex-start; padding: 28px 20px; gap: 16px; }
+
+      #newsletter { padding: 72px 20px; }
+      .nl-h2 { font-size: clamp(40px, 11vw, 64px); }
+
+      footer { padding: 56px 20px 32px; }
+      .ft-grid { grid-template-columns: 1fr; gap: 36px; }
+      .ft-legal { flex-wrap: wrap; gap: 16px; justify-content: center; }
+
+      .cursor, .cursor-ring { display: none; }
+      body { cursor: auto; }
+      a, button { cursor: pointer; }
     }
   </style>
 </head>
@@ -492,9 +582,8 @@
       SS 2025 Collection — Now Live
     </div>
     <h1 class="hero-h1">
-      MOVE<br>
-      <span class="italic">Different.</span><br>
-      FEEL<br>ALIVE.
+      MOVE <span class="italic">Different.</span><br>
+      FEEL ALIVE.
     </h1>
     <p class="hero-body">Handcrafted for those who refuse to blend in. Every pair is a statement — built for the streets, worn by the few.</p>
     <div class="hero-ctas">
@@ -606,7 +695,7 @@
 <section id="craft">
   <div class="craft-top">
     <div class="craft-img reveal">
-      <img src="https://images.unsplash.com/photo-1556906781-9a412961a28c?w=900&q=88&fit=crop" alt="The Craft">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900&q=88&fit=crop" alt="The Craft">
     </div>
     <div class="craft-content reveal">
       <div class="label">The Wearzt Standard</div>
