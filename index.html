@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WEARZT — Move Different</title>
+  <title>WEARZT — Dressed in Lagos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
   <style>
@@ -104,7 +104,6 @@
       background: radial-gradient(ellipse at center, rgba(201,168,76,.04) 0%, transparent 60%);
       pointer-events: none;
     }
-    /* Film grain overlay */
     .grain {
       position: absolute; inset: 0; pointer-events: none; z-index: 1; opacity: .45;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
@@ -179,7 +178,7 @@
       opacity: 0; animation: imgIn 1.2s ease .4s forwards;
     }
     @keyframes imgIn { from{opacity:0;transform:translateX(30px) scale(.97)} to{opacity:1;transform:translateX(0) scale(1)} }
-    .hero-img-frame img { width:100%; height:100%; object-fit:cover; }
+    .hero-img-frame img { width:100%; height:100%; object-fit:cover; object-position: top center; }
     .hero-pill {
       position: absolute; bottom: 48px; left: -40px;
       background: var(--gold); color: var(--black);
@@ -240,7 +239,7 @@
     /* ── FEATURED DROP ── */
     #featured { padding: 0; display:grid; grid-template-columns:1fr 1fr; }
     .ft-img { height: 680px; overflow:hidden; position:relative; background:#0D0D0D; }
-    .ft-img img { width:100%; height:100%; object-fit:cover; transition: transform 9s ease; filter: brightness(.88); }
+    .ft-img img { width:100%; height:100%; object-fit:cover; object-position: top center; transition: transform 9s ease; filter: brightness(.88); }
     #featured:hover .ft-img img { transform: scale(1.06); }
     .ft-content { background:#101010; padding: 88px 72px; display:flex; flex-direction:column; justify-content:center; }
     .ft-badge { display:inline-block; background:var(--gold); color:var(--black); font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; padding:5px 12px; margin-bottom:32px; width:fit-content; }
@@ -267,7 +266,7 @@
     .prod-card { background:var(--grey); position:relative; overflow:hidden; }
     .prod-num { position:absolute; top:20px; left:20px; z-index:3; font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:3px; color:rgba(245,245,240,.25); }
     .prod-img { height:380px; overflow:hidden; position:relative; background:#0E0E0E; }
-    .prod-img img { width:100%; height:100%; object-fit:cover; transition: transform .7s ease, filter .4s; }
+    .prod-img img { width:100%; height:100%; object-fit:cover; object-position: top center; transition: transform .7s ease, filter .4s; }
     .prod-card:hover .prod-img img { transform:scale(1.09); filter:brightness(.75); }
     .prod-over {
       position:absolute; inset:0;
@@ -290,14 +289,14 @@
     .prod-badge { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); font-weight:500; border:1px solid rgba(201,168,76,.2); padding:3px 8px; }
     .prod-badge.new { color:var(--gold); border-color:rgba(201,168,76,.5); }
 
-    /* ── CRAFT (NEW) ── */
+    /* ── CRAFT ── */
     #craft { background: var(--grey2); padding: 0; }
     .craft-top {
       display: grid; grid-template-columns: 1fr 1fr;
       min-height: 600px;
     }
     .craft-img { overflow:hidden; position:relative; }
-    .craft-img img { width:100%; height:100%; object-fit:cover; filter:brightness(.75) contrast(1.05); }
+    .craft-img img { width:100%; height:100%; object-fit:cover; object-position: center; filter:brightness(.75) contrast(1.05); }
     .craft-content {
       padding: 96px 72px;
       display: flex; flex-direction:column; justify-content:center;
@@ -362,14 +361,14 @@
     }
     .cat-card { position:relative; overflow:hidden; }
     .cat-card:first-child { grid-row: span 2; }
-    .cat-card img { width:100%; height:100%; object-fit:cover; transition:transform .8s ease, filter .4s; filter:brightness(.55) contrast(1.05); }
+    .cat-card img { width:100%; height:100%; object-fit:cover; object-position: top center; transition:transform .8s ease, filter .4s; filter:brightness(.55) contrast(1.05); }
     .cat-card:hover img { transform:scale(1.08); filter:brightness(.38) contrast(1.1); }
     .cat-over { position:absolute; inset:0; background:linear-gradient(to top, rgba(8,8,8,.75) 0%, transparent 55%); display:flex; flex-direction:column; justify-content:flex-end; padding:28px 32px; }
     .cat-name { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:3px; margin-bottom:6px; }
     .cat-link { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); text-decoration:none; opacity:0; transform:translateY(8px); transition:opacity .3s, transform .3s; display:inline-flex; align-items:center; gap:6px; }
     .cat-card:hover .cat-link { opacity:1; transform:translateY(0); }
 
-    /* ── TESTIMONIALS (NEW) ── */
+    /* ── TESTIMONIALS ── */
     #testimonials { background: #0C0C0C; }
     .test-head { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:64px; }
     .test-head .title-xl { margin-bottom:0; }
@@ -448,9 +447,7 @@
         padding: 100px 28px 60px;
         text-align: left;
       }
-      /* hide desktop image panel */
       .hero-right { display: none; }
-      /* show mobile image slot between eyebrow and h1 */
       .hero-mobile-img {
         display: block;
         margin: 28px -28px;
@@ -464,7 +461,7 @@
       .hero-mobile-img img {
         width: 100%; height: 100%;
         object-fit: cover;
-        object-position: center;
+        object-position: top center;
       }
       .hero-stats { justify-content: flex-start; gap: 28px; }
       .hero-glow, .hero-glow2 { display: none; }
@@ -584,9 +581,9 @@
 <nav id="nav">
   <a href="#" class="logo">WEAR<b>ZT</b></a>
   <ul class="nav-links">
-    <li><a href="#products">Shop</a></li>
-    <li><a href="#featured">New Drops</a></li>
-    <li><a href="#categories">Categories</a></li>
+    <li><a href="#products">Tees</a></li>
+    <li><a href="#featured">Shorts</a></li>
+    <li><a href="#categories">Sets</a></li>
     <li><a href="#craft">The Craft</a></li>
     <li><a href="#manifesto">Story</a></li>
   </ul>
@@ -604,13 +601,13 @@
       SS 2025 Collection — Now Live
     </div>
     <div class="hero-mobile-img">
-      <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=900&q=90&fit=crop" alt="WEARZT Drop">
+      <img src="images/11.jpg" alt="WEARZT SS25">
     </div>
     <h1 class="hero-h1">
-      MOVE <span class="italic">Different.</span><br>
-      FEEL ALIVE.
+      DRESSED <span class="italic">in Lagos.</span><br>
+      WORN EVERYWHERE.
     </h1>
-    <p class="hero-body">Handcrafted for those who refuse to blend in. Every pair is a statement — built for the streets, worn by the few.</p>
+    <p class="hero-body">Premium streetwear born on the streets of Lagos. Every piece is handcrafted with intention — worn by those who move differently.</p>
     <div class="hero-ctas">
       <a href="#products" class="btn-gold">Shop Collection</a>
       <a href="#featured" class="btn-line">
@@ -619,16 +616,16 @@
       </a>
     </div>
     <div class="hero-stats">
-      <div><div class="stat-n">12K+</div><div class="stat-l">Pairs Sold</div></div>
-      <div><div class="stat-n">48</div><div class="stat-l">Styles</div></div>
+      <div><div class="stat-n">500+</div><div class="stat-l">Pieces Sold</div></div>
+      <div><div class="stat-n">3</div><div class="stat-l">Styles</div></div>
       <div><div class="stat-n">4.9★</div><div class="stat-l">Avg Rating</div></div>
     </div>
   </div>
   <div class="hero-right">
     <div class="hero-img-frame">
-      <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=900&q=90&fit=crop" alt="WEARZT Drop" loading="eager">
+      <img src="images/11.jpg" alt="WEARZT SS25" loading="eager">
     </div>
-    <div class="hero-pill">SS25 DEBUT DROP <small>Limited — 48 Pairs Left</small></div>
+    <div class="hero-pill">SS25 DEBUT DROP <small>Limited — Available Now</small></div>
     <div class="hero-line-num">01 / Hero</div>
   </div>
   <div class="scroll-cue"><span>Scroll</span><div class="scroll-line"></div></div>
@@ -638,14 +635,14 @@
 <div class="mq-wrap">
   <div class="mq-row">
     <div class="mq-track">
-      <div class="mq-item">WEARZT <span class="mq-dot"></span> PREMIUM FOOTWEAR <span class="mq-dot"></span> LIMITED DROPS <span class="mq-dot"></span> MOVE DIFFERENT <span class="mq-dot"></span> BUILT FOR THE STREETS <span class="mq-dot"></span></div>
-      <div class="mq-item">WEARZT <span class="mq-dot"></span> PREMIUM FOOTWEAR <span class="mq-dot"></span> LIMITED DROPS <span class="mq-dot"></span> MOVE DIFFERENT <span class="mq-dot"></span> BUILT FOR THE STREETS <span class="mq-dot"></span></div>
+      <div class="mq-item">WEARZT <span class="mq-dot"></span> LAGOS STREETWEAR <span class="mq-dot"></span> LIMITED DROPS <span class="mq-dot"></span> DRESSED IN LAGOS <span class="mq-dot"></span> WORN EVERYWHERE <span class="mq-dot"></span></div>
+      <div class="mq-item">WEARZT <span class="mq-dot"></span> LAGOS STREETWEAR <span class="mq-dot"></span> LIMITED DROPS <span class="mq-dot"></span> DRESSED IN LAGOS <span class="mq-dot"></span> WORN EVERYWHERE <span class="mq-dot"></span></div>
     </div>
   </div>
   <div class="mq-row reverse">
     <div class="mq-track">
-      <div class="mq-item">HANDCRAFTED <span class="mq-dot"></span> AUTHENTICITY GUARANTEED <span class="mq-dot"></span> SS25 <span class="mq-dot"></span> WORLDWIDE SHIPPING <span class="mq-dot"></span> EXCLUSIVE COLORWAYS <span class="mq-dot"></span></div>
-      <div class="mq-item">HANDCRAFTED <span class="mq-dot"></span> AUTHENTICITY GUARANTEED <span class="mq-dot"></span> SS25 <span class="mq-dot"></span> WORLDWIDE SHIPPING <span class="mq-dot"></span> EXCLUSIVE COLORWAYS <span class="mq-dot"></span></div>
+      <div class="mq-item">HAND EMBROIDERED <span class="mq-dot"></span> AUTHENTICITY GUARANTEED <span class="mq-dot"></span> SS25 <span class="mq-dot"></span> WORLDWIDE SHIPPING <span class="mq-dot"></span> 6.5244°N 3.3792°E <span class="mq-dot"></span></div>
+      <div class="mq-item">HAND EMBROIDERED <span class="mq-dot"></span> AUTHENTICITY GUARANTEED <span class="mq-dot"></span> SS25 <span class="mq-dot"></span> WORLDWIDE SHIPPING <span class="mq-dot"></span> 6.5244°N 3.3792°E <span class="mq-dot"></span></div>
     </div>
   </div>
 </div>
@@ -653,19 +650,19 @@
 <!-- FEATURED -->
 <section id="featured">
   <div class="ft-img reveal">
-    <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=900&q=90&fit=crop" alt="ShadowStep Pro">
+    <img src="images/6.jpg" alt="Lagos Coords Set">
   </div>
   <div class="ft-content reveal">
     <div class="ft-badge">★ Limited Edition — SS25</div>
     <div class="label">New Arrival</div>
-    <h2 class="ft-h2">SHADOW<span>STEP PRO</span></h2>
-    <p class="ft-body">Where precision engineering meets raw street aesthetic. The ShadowStep Pro is built for movement, designed for impact. 3 exclusive colorways — while they last.</p>
+    <h2 class="ft-h2">LAGOS<span>COORDS SET</span></h2>
+    <p class="ft-body">The full look. Cream snake tee paired with signature ZT shorts — each piece hand-embroidered with the Lagos coordinates. Wear where you're from, everywhere you go.</p>
     <div class="ft-colors">
       <div class="ft-swatch active" style="background:#1a1a1a;"></div>
-      <div class="ft-swatch" style="background:#C9A84C;"></div>
       <div class="ft-swatch" style="background:#F5F5F0;"></div>
+      <div class="ft-swatch" style="background:#4a5240;"></div>
     </div>
-    <div class="ft-price"><small>Starting at</small>$165</div>
+    <div class="ft-price"><small>Starting at</small>₦45,000</div>
     <a href="#" class="btn-gold">Shop Now — Limited Stock</a>
   </div>
 </section>
@@ -685,65 +682,65 @@
   <div class="prod-grid">
     <div class="prod-card reveal">
       <div class="prod-num">01</div>
-      <div class="prod-img"><img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=700&q=85&fit=crop" alt="Phantom Dark"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
-      <div class="prod-info"><div class="prod-name">Phantom Dark</div><div class="prod-row"><span class="prod-price">$145</span><span class="prod-badge new">New</span></div></div>
+      <div class="prod-img"><img src="images/22.jpg" alt="Snake Tee — Black"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
+      <div class="prod-info"><div class="prod-name">Snake Tee — Black</div><div class="prod-row"><span class="prod-price">₦25,000</span><span class="prod-badge new">New</span></div></div>
     </div>
     <div class="prod-card reveal" style="transition-delay:.08s">
       <div class="prod-num">02</div>
-      <div class="prod-img"><img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=700&q=85&fit=crop" alt="Eclipse White"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
-      <div class="prod-info"><div class="prod-name">Eclipse White</div><div class="prod-row"><span class="prod-price">$130</span><span class="prod-badge">Bestseller</span></div></div>
+      <div class="prod-img"><img src="images/1.jpg" alt="Snake Tee — Olive"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
+      <div class="prod-info"><div class="prod-name">Snake Tee — Olive</div><div class="prod-row"><span class="prod-price">₦25,000</span><span class="prod-badge">Bestseller</span></div></div>
     </div>
     <div class="prod-card reveal" style="transition-delay:.16s">
       <div class="prod-num">03</div>
-      <div class="prod-img"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=700&q=85&fit=crop" alt="Volt Runner"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
-      <div class="prod-info"><div class="prod-name">Volt Runner</div><div class="prod-row"><span class="prod-price">$155</span><span class="prod-badge new">Limited</span></div></div>
+      <div class="prod-img"><img src="images/20.jpg" alt="Lagos Tee — Cream"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
+      <div class="prod-info"><div class="prod-name">Lagos Tee — Cream</div><div class="prod-row"><span class="prod-price">₦25,000</span><span class="prod-badge new">Limited</span></div></div>
     </div>
     <div class="prod-card reveal" style="transition-delay:.08s">
       <div class="prod-num">04</div>
-      <div class="prod-img"><img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=700&q=85&fit=crop" alt="Arctic Force"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
-      <div class="prod-info"><div class="prod-name">Arctic Force</div><div class="prod-row"><span class="prod-price">$175</span><span class="prod-badge">Premium</span></div></div>
+      <div class="prod-img"><img src="images/4.jpg" alt="ZT Shorts — Black"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
+      <div class="prod-info"><div class="prod-name">ZT Shorts — Black</div><div class="prod-row"><span class="prod-price">₦30,000</span><span class="prod-badge">Signature</span></div></div>
     </div>
     <div class="prod-card reveal" style="transition-delay:.16s">
       <div class="prod-num">05</div>
-      <div class="prod-img"><img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=700&q=85&fit=crop" alt="Stealth Low"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
-      <div class="prod-info"><div class="prod-name">Stealth Low</div><div class="prod-row"><span class="prod-price">$120</span><span class="prod-badge">Bestseller</span></div></div>
+      <div class="prod-img"><img src="images/10.jpg" alt="Lagos Tee — Black"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
+      <div class="prod-info"><div class="prod-name">Lagos Tee — Black</div><div class="prod-row"><span class="prod-price">₦25,000</span><span class="prod-badge">Bestseller</span></div></div>
     </div>
     <div class="prod-card reveal" style="transition-delay:.24s">
       <div class="prod-num">06</div>
-      <div class="prod-img"><img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=700&q=85&fit=crop" alt="Gold Standard"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
-      <div class="prod-info"><div class="prod-name">Gold Standard</div><div class="prod-row"><span class="prod-price">$190</span><span class="prod-badge new">Signature</span></div></div>
+      <div class="prod-img"><img src="images/5.jpg" alt="Lagos Tee — Olive"><div class="prod-over"><button class="prod-qadd">Quick Add</button></div></div>
+      <div class="prod-info"><div class="prod-name">Lagos Tee — Olive</div><div class="prod-row"><span class="prod-price">₦25,000</span><span class="prod-badge new">Signature</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- CRAFT (NEW SECTION) -->
+<!-- CRAFT -->
 <section id="craft">
   <div class="craft-top">
     <div class="craft-img reveal">
-      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900&q=88&fit=crop" alt="The Craft">
+      <img src="images/3 (3).jpg" alt="The Embroidery">
     </div>
     <div class="craft-content reveal">
       <div class="label">The Wearzt Standard</div>
-      <h2 class="craft-h2">NOT JUST<br>A SHOE.<br><em>A Statement.</em></h2>
-      <p class="craft-body">Every WEARZT pair goes through 47 quality checkpoints before it ever touches a box. We obsess over the details you'll never see — because that's exactly what you'll feel.</p>
+      <h2 class="craft-h2">NOT JUST<br>A TEE.<br><em>A Statement.</em></h2>
+      <p class="craft-body">Every WEARZT piece carries the Lagos snake — hand-embroidered with precision thread on premium heavyweight cotton. Details you'll feel every time you put it on.</p>
       <a href="#" class="btn-gold" style="width:fit-content">Our Process</a>
     </div>
   </div>
   <div class="craft-pillars">
     <div class="craft-pillar reveal">
       <div class="pillar-icon">◈</div>
-      <div class="pillar-title">Premium Materials</div>
-      <p class="pillar-body">Full-grain leather uppers, sourced from tanneries in Italy and Portugal. Nothing synthetic touches the surface.</p>
+      <div class="pillar-title">Premium Cotton</div>
+      <p class="pillar-body">Heavyweight 280gsm cotton. Pre-washed and pre-shrunk. Built to outlast the trends it starts.</p>
     </div>
     <div class="craft-pillar reveal" style="transition-delay:.1s">
       <div class="pillar-icon">◉</div>
-      <div class="pillar-title">Ergonomic Sole</div>
-      <p class="pillar-body">Memory foam insoles with a carbon-fibre shank. Designed by sports scientists, refined for everyday streets.</p>
+      <div class="pillar-title">Hand Embroidery</div>
+      <p class="pillar-body">The Lagos snake and ZT monogram are embroidered by hand — never printed, never ironed-on. Craftsmanship you can feel.</p>
     </div>
     <div class="craft-pillar reveal" style="transition-delay:.2s">
       <div class="pillar-icon">◎</div>
-      <div class="pillar-title">Hand-Finished</div>
-      <p class="pillar-body">Every pair is edge-painted, stitched, and inspected by hand. No two pairs are exactly alike. That's the point.</p>
+      <div class="pillar-title">Lagos Signature</div>
+      <p class="pillar-body">6.5244°N, 3.3792°E — the exact coordinates of Lagos, stitched into every piece. Wear where you're from.</p>
     </div>
   </div>
 </section>
@@ -752,11 +749,11 @@
 <section id="manifesto">
   <div class="mf-label">Our Philosophy</div>
   <h2 class="mf-h2 reveal">
-    BUILT FOR THE<br>
-    STREETS. <em>Worn</em><br>
-    BY THE FEW.
+    BUILT IN<br>
+    LAGOS. <em>Worn</em><br>
+    WORLDWIDE.
   </h2>
-  <p class="mf-body reveal">WEARZT isn't a shoe brand. It's a decision. Every pair we make starts with one question: does this move with you, or against you? If it doesn't pass — it doesn't ship.</p>
+  <p class="mf-body reveal">WEARZT isn't a clothing brand. It's a statement of origin. Every piece we make starts with a single question: does this carry Lagos with it? If it doesn't — it doesn't ship.</p>
   <a href="#" class="btn-dark reveal">Read Our Story</a>
 </section>
 
@@ -765,15 +762,15 @@
   <div class="label reveal">Browse</div>
   <h2 class="title-xl reveal" style="margin-bottom:48px">SHOP BY<br>CATEGORY</h2>
   <div class="cat-grid">
-    <div class="cat-card reveal"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900&q=85&fit=crop" alt="Sneakers"><div class="cat-over"><div class="cat-name">Sneakers</div><a href="#" class="cat-link">Explore ↗</a></div></div>
-    <div class="cat-card reveal" style="transition-delay:.08s"><img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=700&q=85&fit=crop" alt="Slides"><div class="cat-over"><div class="cat-name">Slides</div><a href="#" class="cat-link">Explore ↗</a></div></div>
-    <div class="cat-card reveal" style="transition-delay:.16s"><img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=700&q=85&fit=crop" alt="Running"><div class="cat-over"><div class="cat-name">Running</div><a href="#" class="cat-link">Explore ↗</a></div></div>
-    <div class="cat-card reveal" style="transition-delay:.08s"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=700&q=85&fit=crop" alt="Limited"><div class="cat-over"><div class="cat-name">Limited</div><a href="#" class="cat-link">Explore ↗</a></div></div>
-    <div class="cat-card reveal" style="transition-delay:.16s"><img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=700&q=85&fit=crop" alt="Boots"><div class="cat-over"><div class="cat-name">Boots</div><a href="#" class="cat-link">Explore ↗</a></div></div>
+    <div class="cat-card reveal"><img src="images/15.jpg" alt="Tees"><div class="cat-over"><div class="cat-name">Tees</div><a href="#" class="cat-link">Explore ↗</a></div></div>
+    <div class="cat-card reveal" style="transition-delay:.08s"><img src="images/2.jpg" alt="Shorts"><div class="cat-over"><div class="cat-name">Shorts</div><a href="#" class="cat-link">Explore ↗</a></div></div>
+    <div class="cat-card reveal" style="transition-delay:.16s"><img src="images/6.jpg" alt="Sets"><div class="cat-over"><div class="cat-name">Sets</div><a href="#" class="cat-link">Explore ↗</a></div></div>
+    <div class="cat-card reveal" style="transition-delay:.08s"><img src="images/16.jpg" alt="Lagos Series"><div class="cat-over"><div class="cat-name">Lagos Series</div><a href="#" class="cat-link">Explore ↗</a></div></div>
+    <div class="cat-card reveal" style="transition-delay:.16s"><img src="images/22.jpg" alt="Limited"><div class="cat-over"><div class="cat-name">Limited</div><a href="#" class="cat-link">Explore ↗</a></div></div>
   </div>
 </section>
 
-<!-- TESTIMONIALS (NEW SECTION) -->
+<!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="test-head reveal">
     <div>
@@ -786,23 +783,23 @@
     <div class="test-card reveal">
       <div class="test-tag">Verified Purchase</div>
       <div class="test-stars">★★★★★</div>
-      <p class="test-quote">"Wore these on a 14-hour travel day and my feet felt like I was still at home. Nothing on the market comes close to this comfort-to-style ratio."</p>
+      <p class="test-quote">"Wore the Snake Tee to an event in London and got stopped four times. When I said it's from Lagos they couldn't believe it. WEARZT is a different level."</p>
       <div class="test-rule"></div>
       <div class="test-name">Marcus O.</div>
-      <div class="test-loc">Lagos, Nigeria</div>
+      <div class="test-loc">London, UK</div>
     </div>
     <div class="test-card reveal" style="transition-delay:.1s">
       <div class="test-tag">Verified Purchase</div>
       <div class="test-stars">★★★★★</div>
-      <p class="test-quote">"I've been wearing Nikes and Adidas for 15 years. WEARZT just ended that era. The Gold Standard pair is genuinely the best shoe I've ever owned."</p>
+      <p class="test-quote">"The embroidery on the ZT Shorts is genuinely the finest detail I've ever seen on streetwear. You can feel the quality. Worth every naira."</p>
       <div class="test-rule"></div>
       <div class="test-name">Dani K.</div>
-      <div class="test-loc">London, UK</div>
+      <div class="test-loc">Abuja, Nigeria</div>
     </div>
     <div class="test-card reveal" style="transition-delay:.2s">
       <div class="test-tag">Verified Purchase</div>
       <div class="test-stars">★★★★★</div>
-      <p class="test-quote">"Stopped traffic twice in a week. People literally asked me what brand I was wearing. When I said WEARZT they said 'I've never heard of it' — that's exactly the point."</p>
+      <p class="test-quote">"The Lagos coordinates on the back of my Olive Tee hit different. It's more than fashion — it's identity. WEARZT gets it."</p>
       <div class="test-rule"></div>
       <div class="test-name">Zara M.</div>
       <div class="test-loc">Dubai, UAE</div>
@@ -814,7 +811,7 @@
 <div class="strip reveal">
   <div class="strip-item"><span class="strip-icon">✦</span> Worldwide Shipping</div>
   <div class="strip-item"><span class="strip-icon">✦</span> Free Returns — 30 Days</div>
-  <div class="strip-item"><span class="strip-icon">✦</span> Authenticity Guaranteed</div>
+  <div class="strip-item"><span class="strip-icon">✦</span> Hand Embroidered</div>
   <div class="strip-item"><span class="strip-icon">✦</span> Limited Weekly Drops</div>
 </div>
 
@@ -822,7 +819,7 @@
 <section id="newsletter">
   <div class="label reveal" style="justify-content:center">Join the Inner Circle</div>
   <h2 class="nl-h2 reveal">GET EARLY<br>DROP ACCESS</h2>
-  <p class="nl-sub reveal">12,000+ members. First to know. First to cop. No spam — only drops.</p>
+  <p class="nl-sub reveal">Be the first to know when the next drop hits. No spam — only Lagos.</p>
   <form class="nl-form reveal" onsubmit="return false;">
     <input type="email" class="nl-input" placeholder="your@email.com">
     <button type="submit" class="nl-btn">Subscribe</button>
@@ -834,7 +831,7 @@
   <div class="ft-grid">
     <div>
       <a href="#" class="ft-logo">WEAR<b>ZT</b></a>
-      <p class="ft-about">Premium footwear for those who move different. Limited drops. No compromises. Worn by the few.</p>
+      <p class="ft-about">Premium Lagos streetwear. Hand-embroidered. Limited drops. Worn by the few who move differently.</p>
       <div class="ft-socials">
         <a href="#" class="soc">𝕏</a>
         <a href="#" class="soc">ig</a>
@@ -847,8 +844,8 @@
       <ul>
         <li><a href="#">New Arrivals</a></li>
         <li><a href="#">Best Sellers</a></li>
-        <li><a href="#">Sneakers</a></li>
-        <li><a href="#">Slides</a></li>
+        <li><a href="#">Tees</a></li>
+        <li><a href="#">Shorts</a></li>
         <li><a href="#">Limited Drops</a></li>
       </ul>
     </div>
@@ -950,8 +947,8 @@
       if (e.isIntersecting) {
         statsObs.unobserve(e.target);
         const nums = e.target.querySelectorAll('.stat-n');
-        if (nums[0]) animCount(nums[0], 12, 'K+');
-        if (nums[1]) animCount(nums[1], 48);
+        if (nums[0]) animCount(nums[0], 500, '+');
+        if (nums[1]) animCount(nums[1], 3);
         if (nums[2]) { nums[2].textContent = '4.9★'; }
       }
     });
